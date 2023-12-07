@@ -1,9 +1,3 @@
-# Biomejs
+# GraphQLMinify
 
-BiomeJS bindings in Elixir
-
-
-## Building
-
-currently you have to clone biome in this folder to compile the Rust code
-
+Elixir wrapper around https://github.com/dan-lee/graphql-minify-rs
