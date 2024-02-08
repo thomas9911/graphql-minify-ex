@@ -7,7 +7,9 @@ defmodule GraphQLMinify.Native do
     otp_app: :graphql_minify,
     crate: "graphql_minify_native",
     base_url: "https://github.com/thomas9911/graphql-minify-ex/releases/download/v#{version}",
-    force_build: System.get_env("RUSTLER_PRECOMPILATION_GRAPHQL_MINIFY_BUILD") in ["1", "true"],
+    force_build:
+      Application.compile_env(:rustler_precompiled, :force_build)[:graphql_minify] ||
+        System.get_env("RUSTLER_PRECOMPILATION_GRAPHQL_MINIFY_BUILD") in ["1", "true"],
     targets:
       Enum.uniq(["aarch64-unknown-linux-musl" | RustlerPrecompiled.Config.default_targets()]),
     version: version,
