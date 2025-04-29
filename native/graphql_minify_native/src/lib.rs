@@ -24,4 +24,4 @@ fn minify(gql: &str) -> Result<String, Exception> {
     Ok(graphql_minify::minify(gql)?)
 }
 
-rustler::init!("Elixir.GraphQLMinify.Native", [minify]);
+rustler::init!("Elixir.GraphQLMinify.Native");
